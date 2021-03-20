@@ -2,6 +2,7 @@
 #include <string>
 using namespace std;
 class Title {
+private:
 	string name;
 	Type type;
 	int episodes;
@@ -11,4 +12,11 @@ class Title {
 	Genre genreSub;
 	Rating rating;
 	double grade;
+public:
+	Title();
+	string getName();
+	void createTitle();
+	void editTitle();
+	bool operator<(const Title& other);
+
 };

@@ -145,6 +145,8 @@
     <ClInclude Include="Title.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ContentList.cpp" />
+    <ClCompile Include="Title.cpp" />
     <ClCompile Include="FileEmployee.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
