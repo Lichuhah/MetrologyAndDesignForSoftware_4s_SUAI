@@ -14,7 +14,6 @@ extern std::vector<std::string>* Status;
 extern std::vector<std::string>* Genre;
 extern std::vector<std::string>* Rating;
 
-
 class FileEmployee{
 private:
 	ifstream fileToRead;
@@ -22,12 +21,12 @@ private:
 	tm* dateTime;
 
 	void saveDateTime();
+	Title fromStrToTitle(const string& s);
 public:
 	FileEmployee();
 	void fileOpen();
 	void saveData(ContentList* list);
 	void readData(ContentList* list);
-	Title fromStrToTitle(const string& s);
 	void loadEnums();
 
 };

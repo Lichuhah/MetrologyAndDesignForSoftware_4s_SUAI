@@ -16,7 +16,8 @@ void FileEmployee::saveDateTime() {
 		fileToWrite.close();
 	}
 	else {
-		cout << "Ошибка открытия файла.";
+		ofstream newFile(filetimepath);
+		saveDateTime();
 	}
 }
 
@@ -34,11 +35,14 @@ void FileEmployee::saveData(ContentList* list) {
 			fileToWrite << listData->at(i).getGrade() << "|\n";
 		}
 		fileToWrite.close();
+		cout << "\n Данные сохранены\n";
 	}
 	else {
-		cout << "Ошибка открытия файла.";
+		ofstream newFile(filedatapath);
+		saveData(list);
 	}
 }
+
 void FileEmployee::loadEnums() {
 	extern std::vector<std::string>* Type;
 	extern std::vector<std::string>* Status;
@@ -78,10 +82,12 @@ void FileEmployee::loadEnums() {
 		fileToRead.close();
 	}
 	else {
-
+		ofstream newFile(fileenumspath);
+		loadEnums();
 	}
 
 }
+
 void FileEmployee::readData(ContentList* list) {
 	fileToRead.open(filedatapath);
 	if (fileToRead.is_open()) {
@@ -98,7 +104,8 @@ void FileEmployee::readData(ContentList* list) {
 		fileToRead.close();
 	}
 	else {
-
+		ofstream newFile(filedatapath);
+		readData(list);
 	}
 }
 

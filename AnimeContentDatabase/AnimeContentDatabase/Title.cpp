@@ -2,6 +2,7 @@
 #include "Enums.h"
 #include <iostream>
 #include <stdlib.h>
+#include "Check.h"
 
 using namespace std;
 
@@ -28,10 +29,9 @@ string Title::getName() {
 }
 
 void Title::setName() {
-
+	Check check;
 	cout << "\nВведите название: ";
-	cin >> name;
-	this->name = name;
+	this->name = check.inputText();
 }
 
 string Title::getType() {
@@ -46,9 +46,8 @@ void Title::setType() {
 		cout << i << " - " << Type->at(i) <<" ";
 	}
 	cout << ") ";
-	int a;
-	cin >> a;
-	this->type = Type->at(a);
+	Check check;
+	this->type = Type->at(check.inputOnlyNumberInRange(0, Type->size()));
 }
 
 string Title::getStatus() {
@@ -62,11 +61,9 @@ void Title::setStatus() {
 		cout << i << " - " << Status->at(i) << " ";
 	}
 	cout << ")";
-	int a;
-	cin >> a;
-	this->status = Status->at(a);
+	Check check;
+	this->status = Status->at(check.inputOnlyNumberInRange(0, Status->size()));
 }
-
 
 string Title::getGenreMain() {
 	return genreMain;
@@ -79,9 +76,8 @@ void Title::setGenreMain() {
 		cout << i << " - " << Genre->at(i) << " ";
 	}
 	cout << ")";
-	int a;
-	cin >> a;
-	this->genreMain = Genre->at(a);
+	Check check;
+	this->genreMain = Genre->at(check.inputOnlyNumberInRange(0, Genre->size()));
 }
 
 string Title::getGenreSub() {
@@ -95,9 +91,8 @@ void Title::setGenreSub() {
 		cout << i << " - " << Genre->at(i) << " ";
 	}
 	cout << ")";
-	int a;
-	cin >> a;
-	this->genreSub = Genre->at(a);
+	Check check;
+	this->genreSub = Genre->at(check.inputOnlyNumberInRange(0, Genre->size()));
 }
 
 string Title::getRating() {
@@ -112,9 +107,8 @@ void Title::setRating() {
 		cout << i << " - " << Rating->at(i) << " ";
 	}
 	cout << ")";
-	int a;
-	cin >> a;
-	this->rating = Rating->at(a);
+	Check check;
+	this->rating = Rating->at(check.inputOnlyNumberInRange(0, Rating->size()));
 }
 
 double Title::getGrade() {
@@ -123,9 +117,8 @@ double Title::getGrade() {
 
 void Title::setGrade() {
 	cout << "\nВведите оценку: ";
-	double grade;
-	cin >> grade;
-	this->grade = grade;
+	Check check;
+	this->grade = check.inputOnlyDouble();
 }
 
 bool Title::operator<(const Title& other) {
@@ -146,14 +139,8 @@ void Title::createTitle() {
 	setGrade();
 }
 
-bool Title::isEditableField(string field) {
-	bool info;
-	cout << "Редактировать поле "+field+"? (0 - Нет, 1 - Да)";
-	cin >> info;
-	return info;
-}
-
 void Title::editTitle() {
+	showTitle();
 	if (isEditableField("название")) {
 		setName();
 	}
@@ -175,6 +162,13 @@ void Title::editTitle() {
 	if (isEditableField("оценка")) {
 		setGrade();
 	}
+}
+
+bool Title::isEditableField(string field) {
+	bool info;
+	cout << "Редактировать поле " + field + "? (0 - Нет, 1 - Да)";
+	cin >> info;
+	return info;
 }
 
 void Title::showTitle() {

@@ -1,6 +1,7 @@
 #include "ContentList.h"
 #include <iostream>
 #include <algorithm>
+#include "Check.h"
 
 using namespace std;
 
@@ -23,9 +24,8 @@ void ContentList::showList() {
 
 void ContentList::deleteTitle() {
 	cout << "¬ведите номер удал€емого тайтла: ";
-	int id;
-	cin >> id;
-	list.erase(list.begin()+id);
+	Check check;
+	list.erase(list.begin()+check.inputOnlyNumber());
 	cout << "\nЁлемент удален.\n";
 }
 
@@ -36,9 +36,8 @@ void ContentList::clearList() {
 
 void ContentList::editTitle() {
 	cout << "¬ведите номер измен€емого тайтла: ";
-	int id;
-	cin >> id;
-	list[id].editTitle();
+	Check check;
+	list[check.inputOnlyNumber()].editTitle();
 	cout << "\nЁлемент изменен.\n";
 }
 

@@ -139,12 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Check.h" />
     <ClInclude Include="ContentList.h" />
     <ClInclude Include="Enums.h" />
     <ClInclude Include="FileEmployee.h" />
     <ClInclude Include="Title.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Check.cpp" />
     <ClCompile Include="ContentList.cpp" />
     <ClCompile Include="Enums.cpp" />
     <ClCompile Include="Title.cpp" />

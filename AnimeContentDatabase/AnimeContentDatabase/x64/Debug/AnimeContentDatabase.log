@@ -1,2 +1,13 @@
-﻿  FileEmployee.cpp
+﻿  Check.cpp
+  ContentList.cpp
+  Enums.cpp
+  Title.cpp
+D:\Labs\SoftwareMetrology_4Sem\AnimeContentDatabase\AnimeContentDatabase\Title.cpp(50,68): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Labs\SoftwareMetrology_4Sem\AnimeContentDatabase\AnimeContentDatabase\Title.cpp(65,74): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Labs\SoftwareMetrology_4Sem\AnimeContentDatabase\AnimeContentDatabase\Title.cpp(80,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Labs\SoftwareMetrology_4Sem\AnimeContentDatabase\AnimeContentDatabase\Title.cpp(95,74): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Labs\SoftwareMetrology_4Sem\AnimeContentDatabase\AnimeContentDatabase\Title.cpp(111,74): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  FileEmployee.cpp
+  Source.cpp
+  Generating Code...
   AnimeContentDatabase.vcxproj -> D:\Labs\SoftwareMetrology_4Sem\AnimeContentDatabase\x64\Debug\AnimeContentDatabase.exe

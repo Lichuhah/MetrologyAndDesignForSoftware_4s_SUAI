@@ -23,6 +23,7 @@ public:
 
 	string getName();
 	void setName();
+
 	string getType();
 	void setType();
 
