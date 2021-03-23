@@ -7,11 +7,11 @@ using namespace std;
 class Title {
 private:
 	string name;
-	Type type;
-	Status status;
-	Genre genreMain;
-	Genre genreSub;
-	Rating rating;
+	string type;
+	string status;
+	string genreMain;
+	string genreSub;
+	string rating;
 	double grade;
 
 	bool isEditableField(string field);
@@ -25,19 +25,19 @@ public:
 	void setName();
 	string getType();
 	void setType();
-	void setType(string text);
+
 	string getStatus();
 	void setStatus();
-	void setStatus(string text);
+
 	string getGenreMain();
 	void setGenreMain();
-	void setGenreMain(string text);
+
 	string getGenreSub();
 	void setGenreSub();
-	void setGenreSub(string text);
+
 	string getRating();
 	void setRating();
-	void setRating(string text);
+
 	double getGrade();
 	void setGrade();
 

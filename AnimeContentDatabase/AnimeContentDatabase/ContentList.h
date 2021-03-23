@@ -6,7 +6,6 @@
 class ContentList {
 private:
 	vector<Title> list;
-
 	
 public:
 	ContentList();

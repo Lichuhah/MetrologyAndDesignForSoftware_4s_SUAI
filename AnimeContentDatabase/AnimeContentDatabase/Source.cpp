@@ -25,6 +25,7 @@ void menu() {
 void UI() {
 	ContentList contentList;
 	FileEmployee fileEmployee;
+	fileEmployee.loadEnums();
 	
 	menu();
 	cout << "Ваш выбор: ";

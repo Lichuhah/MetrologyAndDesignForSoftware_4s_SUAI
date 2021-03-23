@@ -39,7 +39,49 @@ void FileEmployee::saveData(ContentList* list) {
 		cout << "Ошибка открытия файла.";
 	}
 }
+void FileEmployee::loadEnums() {
+	extern std::vector<std::string>* Type;
+	extern std::vector<std::string>* Status;
+	extern std::vector<std::string>* Genre;
+	extern std::vector<std::string>* Rating;
+	fileToRead.open(fileenumspath);
+	if (fileToRead.is_open()) {
+		string s;
+		char del = ',';
+		vector<string> tokens;
+		string token;
 
+		getline(fileToRead, s);
+		istringstream tokenStream1(s);
+		while (getline(tokenStream1, token, del))
+		{
+			Type->push_back(token);
+		}
+		getline(fileToRead, s);
+		istringstream tokenStream2(s);
+		while (getline(tokenStream2, token, del))
+		{
+			Status->push_back(token);
+		}
+		getline(fileToRead, s);
+		istringstream tokenStream3(s);
+		while (getline(tokenStream3, token, del))
+		{
+			Genre->push_back(token);
+		}
+		getline(fileToRead, s);
+		istringstream tokenStream4(s);
+		while (getline(tokenStream4, token, del))
+		{
+			Rating->push_back(token);
+		}
+		fileToRead.close();
+	}
+	else {
+
+	}
+
+}
 void FileEmployee::readData(ContentList* list) {
 	fileToRead.open(filedatapath);
 	if (fileToRead.is_open()) {
@@ -53,6 +95,7 @@ void FileEmployee::readData(ContentList* list) {
 				listData->push_back(t);
 			}
 		}
+		fileToRead.close();
 	}
 	else {
 

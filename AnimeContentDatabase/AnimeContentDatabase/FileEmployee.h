@@ -2,11 +2,18 @@
 #define FILEEMPLOYEE_HEADER
 #define filetimepath "time.txt"
 #define filedatapath "data.txt"
+#define fileenumspath "enums.txt"
 #include <time.h>
 #include "ContentList.h"
 #include <fstream>
 
 using namespace std;
+
+extern std::vector<std::string>* Type;
+extern std::vector<std::string>* Status;
+extern std::vector<std::string>* Genre;
+extern std::vector<std::string>* Rating;
+
 
 class FileEmployee{
 private:
@@ -21,5 +28,7 @@ public:
 	void saveData(ContentList* list);
 	void readData(ContentList* list);
 	Title fromStrToTitle(const string& s);
+	void loadEnums();
+
 };
 #endif
