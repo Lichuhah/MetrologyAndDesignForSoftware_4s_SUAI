@@ -1,4 +1,3 @@
-#pragma once
 #ifndef CHECK_HEADER
 #define CHECK_HEADER
 
